@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тварини — ZOO</title>
+  <link rel="stylesheet" href="tvarunu.css">
+  <script src="tvarunu.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">🌿 ZOO</div>
+    <nav>
+      <a href="about.html">Про нас</a>
+      <a href="visit.html">Відвідати</a>
+      <a href="animals.html" class="active">Тварини</a>
+      <a href="contacts.html">Контакти</a>
+    </nav>
+    <button class="btn">Купити квиток</button>
+  </header>
+
+  <section class="hero hero-animals">
+    <div class="hero-text">
+      <h1>Наші улюбленці</h1>
+      <p>Зазирніть у дивовижний світ дикої природи 🦁🦒🐼</p>
+    </div>
+  </section>
+
+  <section id="confirmationMessage" class="hidden">
+    <h3>✅ Дякуємо за покупку!</h3>
+    <p id="purchaseDetails"></p>
+  </section>
+
+  <section class="animals">
+    <h2>Наші мешканці</h2>
+    <p>Від могутніх хижаків до милих приматів – кожен знайде улюбленця!</p>
+    <div class="animals-list">
+      <div class="animal-card">
+        <img src="https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg" alt="Жирафа">
+        <span>Жирафа</span>
+      </div>
+      <div class="animal-card">
+        <img src="https://img.freepik.com/free-photo/closeup-shot-male-lion-jungle-daytime_181624-46469.jpg" alt="Лев">
+        <span>Лев</span>
+      </div>
+      <div class="animal-card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/9/9d/Lightmatter_Alaskan_brownbear.jpg" alt="Грізлі">
+        <span>Грізлі</span>
+      </div>
+      <div class="animal-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9_whVt9rTHqspJshnBJ2sq-31uuImP_1lng" alt="Шимпанзе">
+        <span>Шимпанзе</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="walk-of-fame">
+    <h2>🐾 Доріжка слави наших тварин 🐾</h2>
+    <div class="fame-slider">
+      <div class="fame-track">
+        <div class="fame-card"><img src="https://dovidka.biz.ua/wp-content/uploads/2020/03/opys-slona-tvir.jpg" alt="Слон"><p>Слон</p></div>
+        <div class="fame-card"><img src="https://cdn.e-pet.com.ua/uploaded/2024/7/6/21/123182802_xl-Eytyaxqu.jpg" alt="Папуга"><p>Папуга</p></div>
+        <div class="fame-card"><img src="https://www.rodyna.in.ua/wp-content/uploads/2017/03/%D0%BF%D0%B0%D0%BD%D0%B4%D0%B0_1a.jpg" alt="Панда"><p>Панда</p></div>
+        <div class="fame-card"><img src="https://img.freepik.com/free-photo/zebra-meadow-surrounded-by-greenery-sunlight_181624-15880.jpg?semt=ais_hybrid" alt="Зебра"><p>Зебра</p></div>
+        <div class="fame-card"><img src="https://images.pexels.com/photos/2649841/pexels-photo-2649841.jpeg?cs=srgb&dl=pexels-jose-almeida-999955-2649841.jpg&fm=jpg" alt="Тигр"><p>Тигр</p></div>
+        <div class="fame-card"><img src="https://images.pexels.com/photos/52500/horse-herd-fog-nature-52500.jpeg" alt="Кінь"><p>Кінь</p></div>
+        <div class="fame-card"><img src="https://dovidka.biz.ua/wp-content/uploads/2020/03/opys-slona-tvir.jpg" alt="Слон"><p>Слон</p></div>
+        <div class="fame-card"><img src="https://cdn.e-pet.com.ua/uploaded/2024/7/6/21/123182802_xl-Eytyaxqu.jpg" alt="Папуга"><p>Папуга</p></div>
+        <div class="fame-card"><img src="https://www.rodyna.in.ua/wp-content/uploads/2017/03/%D0%BF%D0%B0%D0%BD%D0%B4%D0%B0_1a.jpg" alt="Панда"><p>Панда</p></div>
+        <div class="fame-card"><img src="https://img.freepik.com/free-photo/zebra-meadow-surrounded-by-greenery-sunlight_181624-15880.jpg?semt=ais_hybrid" alt="Зебра"><p>Зебра</p></div>
+      </div>
+    </div>
+  </section>
+
+  <button id="fontChangeBtn">🔤 Змінити шрифт</button>
+  <div id="ticketModal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h2>Купівля квитків</h2>
+      <label for="ticketType">Тип квитка:</label>
+      <select id="ticketType">
+        <option value="25">Дорослий – $25</option>
+        <option value="20">Дитячий – $20</option>
+        <option value="20">Пенсіонери – $20</option>
+      </select>
+
+      <label for="ticketQty">Кількість:</label>
+      <input type="number" id="ticketQty" value="1" min="1">
+
+      <p>Сума: <span id="totalPrice">$25</span></p>
+      <button id="buyTickets" class="btn">Підтвердити покупку</button>
+    </div>
+  </div>
+</body>
+</html>
