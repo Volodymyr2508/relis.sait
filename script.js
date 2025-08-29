@@ -7,14 +7,11 @@ const fonts = [
 ];
 
 let currentFont = 0;
-const fontBtn = document.getElementById('fontChangeBtn');
 
-if (fontBtn) {
-  fontBtn.addEventListener('click', () => {
-    currentFont = (currentFont + 1) % fonts.length;
-    document.body.style.fontFamily = fonts[currentFont];
-  });
-}
+document.getElementById('fontChangeBtn').addEventListener('click', () => {
+  currentFont = (currentFont + 1) % fonts.length;
+  document.body.style.fontFamily = fonts[currentFont];
+});
 
 const cards = document.querySelectorAll('.animal-card');
 
@@ -31,32 +28,43 @@ function checkCards() {
 window.addEventListener('scroll', checkCards);
 window.addEventListener('load', checkCards);
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  });
+const modal = document.getElementById("ticketModal");
+const openBtn = document.getElementById("openTickets"); 
+const closeBtn = document.getElementById("closeModal");
+
+const ticketType = document.getElementById("ticketType");
+const ticketQty = document.getElementById("ticketQty");
+const totalPrice = document.getElementById("totalPrice");
+const buyBtn = document.getElementById("buyTickets");
+openBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+  updatePrice();
+});
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 
-const currentPage = location.pathname.split('/').pop();
-document.querySelectorAll('nav a').forEach(link => {
-  if (link.getAttribute('href') === currentPage) {
-    link.classList.add('active');
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
   }
 });
-const backToTop = document.getElementById('backToTop');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTop.style.display = 'block';
-  } else {
-    backToTop.style.display = 'none';
-  }
+function updatePrice() {
+  const price = parseInt(ticketType.value);
+  const qty = parseInt(ticketQty.value);
+  totalPrice.textContent = `$${price * qty}`;
+}
+
+ticketType.addEventListener("change", updatePrice);
+ticketQty.addEventListener("input", updatePrice);
+
+buyBtn.addEventListener("click", () => {
+  const price = parseInt(ticketType.value);
+  const qty = parseInt(ticketQty.value);
+  const sum = price * qty;
+  alert(`Ви купили ${qty} квиток(и) на суму $${sum}`);
+  modal.style.display = "none";
 });
 
 backToTop.addEventListener('click', () => {
