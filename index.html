@@ -1,1 +1,93 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZOO</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">🌿 ZOO</div>
+      <nav>
+        <a href="pronas.html">Про нас</a>
+        <a href="vidvidatu.html">Відвідати</a>
+        <a href="tvarunu.html">Тварини</a>
+        <a href="kontaktu.html">Контакти</a>
+      </nav>
+      <button class="btn" id="openTickets">Купити квиток</button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Ласкаво просимо до Зоопарку</h1>
+        <p>Досліджуйте наш різноманітний світ тварин і проведіть незабутній день з родиною!</p>
+        <button class="btn">Плануйте візит</button>
+      </div>
+      <div class="hero-image">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Elephant_near_ndutu.jpg/1200px-Elephant_near_ndutu.jpg" alt="Слон">
+      </div>
+    </section>
+
+    <section class="animals">
+      <h2>Наші тварини</h2>
+      <p>Дізнайтеся про мешканців з усього світу та їх поведінку.</p>
+      <div class="animals-list">
+        <div class="animal-card">
+          <img src="https://images.pexels.com/photos/34098/south-africa-hluhluwe-giraffes-pattern.jpg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Жирафа">
+          <span>Жирафа</span>
+        </div>
+        <div class="animal-card">
+          <img src="https://img.freepik.com/free-photo/closeup-shot-male-lion-jungle-daytime_181624-46469.jpg?semt=ais_hybrid&w=740&q=80" alt="Лев">
+          <span>Лев</span>
+        </div>
+        <div class="animal-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Lightmatter_Alaskan_brownbear.jpg/258px-Lightmatter_Alaskan_brownbear.jpg" alt="Ведмідь">
+          <span>Грізлі</span>
+        </div>
+        <div class="animal-card">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9_whVt9rTHqspJshnBJ2sq-31uuImP_1lng&s" alt="Шимпанзе">
+          <span>Шимпанзе</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <div class="prices">
+        <h3>Ціни на квитки</h3>
+        <p>Дорослий: $25</p>
+        <p>Дитячий: $20</p>
+        <p>Пенсіонери: $20</p>
+      </div>
+      <div class="plan">
+        <h3>Плануйте візит</h3>
+        <p>Дізнайтеся години роботи, маршрути та іншу важливу інформацію для вашого візиту.</p>
+        <button class="btn">Отримати маршрут</button>
+      </div>
+    </section>
+
+    <button id="fontChangeBtn">Змінити шрифт</button>
+    <div id="ticketModal" class="modal">
+      <div class="modal-content">
+        <span id="closeModal" class="close">&times;</span>
+        <h2>Купівля квитків</h2>
+
+        <label for="ticketType">Тип квитка:</label>
+        <select id="ticketType">
+          <option value="25">Дорослий – $25</option>
+          <option value="20">Дитячий – $20</option>
+          <option value="20">Пенсіонери – $20</option>
+        </select>
+
+        <label for="ticketQty">Кількість:</label>
+        <input type="number" id="ticketQty" value="1" min="1">
+
+        <p>Сума: <span id="totalPrice">$25</span></p>
+
+        <button id="buyTickets" class="btn">Підтвердити покупку</button>
+      </div>
+    </div>
+  </body>
+</html>
 
